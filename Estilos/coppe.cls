@@ -71,6 +71,9 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \newboolean{maledoc}
 \setboolean{maledoc}{false}
 \newcommand\bibliografia{Refer{\^ e}ncias Bibliogr{\' a}ficas} % o registro não tem aceitado o termo em inglês
+
+% Opções Importantes do tipo de texto
+
 \DeclareOption{msc}{%
   \newcommand{\@degree}{M.Sc.}
   \newcommand{\@degreename}{Mestrado}
@@ -96,6 +99,9 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \newcommand\local@doctype{Tese}
   \newcommand\foreign@doctype{Thesis}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \DeclareOption{numbers}{%
   \PassOptionsToPackage{numbers}{natbib}
 }
