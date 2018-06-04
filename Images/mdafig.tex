@@ -1,0 +1,51 @@
+%MDA diagram
+\begin{figure}[ht]
+\centering
+
+\begin{tikzpicture}[squarednode/.style={rectangle, 
+					rounded corners, 
+					very thick,
+ 					minimum width=3cm,
+					minimum height=1.5cm,
+					draw=gray!80, 
+					fill=gray!5}]
+% To reduce all image, transform canvas
+% forgets about image size, so 
+% we need a bounding box
+% This is lame, but works with Eduardo Thesis´s image (now black and white for elegance)
+
+% don´t ask me about theses limits
+% I just tried until I found which ones
+%workded
+\useasboundingbox (3,-2) rectangle (6,2);
+\scope[transform canvas={scale=.75}]
+         % Your actual drawing
+
+
+%MDA nodes
+\node[squarednode]  (m) [anchor = west]{Mechanics};
+\node[squarednode]  (d) [right of = m, node distance=3cm, anchor=west] {Dynamics};
+\node[squarednode]  (a) [right of = d, node distance=3cm, anchor=west] {Aesthetics};
+
+%paths designer
+\path [-latex,  black, very thick] ([yshift=1ex]m.east) edge coordinate[midway](designerPath1) ([yshift=1ex]d.west);
+\path [-latex,  black, very thick] ([yshift=1ex]d.east) edge coordinate[midway](designerPath2) ([yshift=1ex]a.west);
+
+%paths player
+\path [latex-, black, very thick] ([yshift=-1ex]m.east) edge  coordinate[midway](playerPath1)([yshift=-1ex]d.west);
+\path [latex-, black, very thick] ([yshift=-1ex]d.east) edge coordinate[midway](playerPath2) ([yshift=-1ex]a.west);
+
+%designer legend
+\node [draw] (designerLegend) [above of = d, align=center, node distance=2cm, anchor=south]{\small Designer's Perspective};
+\draw [dashed,<-,thick](designerPath1.north) |- (designerLegend.west);
+%\draw [dashed,<-](designerPath2.north) |- (designerLegend.east);
+
+%player legend
+\node [draw] (playerLegend) [below of = d, align=center, node distance=2cm, anchor=north]{\small Player's Perspective};
+%\draw[dashed, <-](playerPath1.south) |- (playerLegend.west);
+\draw[dashed, <-, thick](playerPath2.south) |- (playerLegend.east);
+    \endscope
+\end{tikzpicture}
+\caption{MDA diagram}
+\label{fig:MDA_diagram}
+\end{figure}

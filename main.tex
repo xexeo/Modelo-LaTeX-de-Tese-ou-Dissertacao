@@ -1,0 +1,118 @@
+\documentclass[msc,pdftex]{Estilos/coppe}
+%other options
+%doublespacing HAHHAHAHAHAH
+
+
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\PrerenderUnicode{ě} %for bibitem beholavek2002
+\usepackage{verbatim}
+\setcounter{secnumdepth}{4} %numbering subsubsections
+\setcounter{tocdepth}{4} %subsubsections in table of contents
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+\usepackage{amsmath,amssymb}
+\usepackage{relsize}
+\usepackage{graphicx}
+\usepackage{courier}
+
+
+
+%subcaption and subfigure
+\usepackage{subfig}
+\usepackage{caption}
+
+%\renewcommand\thesubfigure{ (\alph{subfigure})}
+
+%apud citation style
+\newcommand{\apudp}[2]{(\citeauthor{#1},\space\citeyear{#1},\space as cited in \citeauthor{#2},\space\citeyear{#2})}
+%\newcommand{\apud}[2]{\citeauthor{#1}\space (as cited in \citeauthor{#2},\space\citeyear{#2})}
+
+%full centered cell
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\usepackage{multirow}
+%\usepackage{array}
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{ucs}
+\usepgflibrary{fpu}
+\usetikzlibrary{shapes.multipart, mindmap, arrows}
+
+%preventing widow and orphan lines
+\widowpenalty=10000
+\clubpenalty=10000
+\postdisplaypenalty=10000
+
+%footnote in verty bottom
+\usepackage[bottom]{footmisc}
+
+\usepackage{float}
+
+%\addto{\captionsenglish}{\renewcommand{\bibname}{Referências Bibliográficas}}
+
+
+\makelosymbols
+\makeloabbreviations
+
+\pgfplotsset{compat=1.12}
+
+\begin{document}
+
+\title{Model for Thesis or Dissertation at COPPE/PESC}
+\foreigntitle{Modelo para Tese ou Dissertação no PESC/COPPE}
+\author{Geraldo}{Xexéo}
+\advisor{Prof.}{Geraldo Bonorino}{Xexéo}{D.Sc.}
+%\advisor{Prof.}{Nome do Segundo Orientador}{Sobrenome}{Ph.D.}
+%\advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
+	
+\examiner{Prof.}{Geraldo Bonorino Xexéo}{D.Sc.}
+\examiner{Prof.}{Nome do Quarto Examinador Sobrenome}{Ph.D.}
+\examiner{Prof.}{Nome do Quinto Examinador Sobrenome}{Ph.D.}
+\department{PESC}
+\date{06}{2018}
+	
+\keyword{keyword1}
+\keyword{keyword2}
+
+
+  \maketitle
+
+  \frontmatter
+  
+\include{Contents/cap0.frontmatter/dedication}
+\include{Contents/cap0.frontmatter/thanks}
+\include{Contents/cap0.frontmatter/resumo}
+\include{Contents/cap0.frontmatter/foreignAbstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\printlosymbols
+\printloabbreviations
+
+\mainmatter
+	
+
+\include{Contents/cap1.Intro/Intro}
+\include{Contents/cap2.revision/Revision}
+\include{Contents/cap3.methodology/Methodology}
+
+	
+\backmatter
+\nocite{*}
+	
+\bibliographystyle{Estilos/coppe-plain}
+\bibliography{bibli}
+
+\appendix
+	
+%\include{03_apendices//appenA}
+\end{document}
