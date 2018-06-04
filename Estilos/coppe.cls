@@ -1,6 +1,7 @@
 %%
 %% This is file `coppe.cls',
 %% generated with the docstrip utility.
+%% MODIFIED BY XEXEO
 %%
 %% The original source files were:
 %%
@@ -56,7 +57,16 @@
 \RequirePackage[sort&compress]{natbib}
 \RequirePackage{hyphenat}
 \RequirePackage{lastpage}
-\RequirePackage[brazil,english]{babel}
+%%%%%%%%%%%%%%%
+%
+% ESCOLHA SUA LINGUAGEM PRINCIPAL DA TESE
+% PORTUGUÊS DO BRAZIL
+\RequirePackage[english,brazil]{babel}
+% 
+% INGLÊS
+%\RequirePackage[brazil,english]{babel}
+%
+%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifthen}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
@@ -65,14 +75,14 @@
 \RequirePackage{ltxcmds}
 \RequirePackage[a4paper,bindingoffset=0.0cm,vcentering=true,%
 top=2.5cm,bottom=2.5cm,left=3.0cm,right=3.0cm]{geometry}
+
 \def\CoppeTeX{{\rm C\kern-.05em{\sc o\kern-.025em p\kern-.025em
 p\kern-.025em e}}\kern-.08em
 T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
 \newboolean{maledoc}
 \setboolean{maledoc}{false}
-\newcommand\bibliografia{Refer{\^ e}ncias Bibliogr{\' a}ficas} % o registro não tem aceitado o termo em inglês
 
-% Opções Importantes do tipo de texto
+\newcommand\bibliografia{Refer{\^ e}ncias Bibliogr{\' a}ficas} % o registro não tem aceitado o termo em inglês
 
 \DeclareOption{msc}{%
   \newcommand{\@degree}{M.Sc.}
@@ -190,6 +200,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \global\@namedef{CoppeKeyword:\expandafter\the\c@keywords}{#1}
   \global\addtocounter{keywords}{1}
 }
+
 \renewcommand\frontmatter{%
   \cleardoublepage
   \@mainmatterfalse
@@ -201,6 +212,7 @@ T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
   \pagestyle{plain}
   \ifthenelse{\boolean{maledoc}}{}{\makecatalog}%
 }
+
 \renewcommand\mainmatter{%
   \coppe@mainBegin
   \cleardoublepage
