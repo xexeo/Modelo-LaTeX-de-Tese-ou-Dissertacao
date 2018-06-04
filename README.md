@@ -9,11 +9,11 @@ Diferenças básicas:
 3) Segundo o registro, não pode traduzir Referências Bibliográficas
 4) Propõe um modelo de diretórios e arquivos 
 5) Criado originalmente no ShareLaTeX
-
+6) Consertos feitos na mão e não no documento correto (pendente)
 
 Modelo Original:
+http://coppetex.sourceforge.net/index.html
 
 Contribuições:
-
 Joshua Kritz, Fellipe Duarte, Eduardo Mangeli
 
